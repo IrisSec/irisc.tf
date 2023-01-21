@@ -1,0 +1,128 @@
+@font-face {
+	font-family: "Share Tech Mono";
+	src: url("/assets/fonts/ShareTechMono-Regular.ttf");
+}
+
+:root {
+	--bg-color: #000B00;
+	--bg-color-secondary: #002300;
+	--fg-color: #009927;
+	--fg-color-secondary: #003B00;
+	--bold: #00FF41;
+	--less-bold: #00CC34;
+}
+
+html {
+	background-color: var(--bg-color);
+}
+
+body {
+	font-size: 16pt;
+	font-family: "Share Tech Mono", monospace;
+	color: var(--fg-color);
+	margin: 5% auto;
+	max-width: 60%;
+}
+/* CRT horizontal lines effect. */
+body::before {
+	content: " ";
+	display: block;
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	/* 49% instead of 50% fixes visual bug on firefox/hardware accel */
+	background: linear-gradient(rgba(18, 16, 16, 0) 49%, rgba(0, 0, 0, 0.25) 49%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+	z-index: 2;
+	background-size: 100% 3px, 2px 100%;
+	pointer-events: none;
+}
+body::after {
+	content: " ";
+	display: block;
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background: rgba(18, 16, 16, 0.1);
+	opacity: 0;
+	z-index: 2;
+	pointer-events: none;
+}
+/* Custom scrollbar. */
+body::-webkit-scrollbar {
+	width: 12px;
+}
+
+body::-webkit-scrollbar-thumb {
+	background-color: var(--fg-color-secondary);
+}
+
+a {
+	color: var(--less-bold);
+	text-decoration: underline;
+	transition: 250ms linear;
+}
+a:visited {
+	color: var(--less-bold);
+	text-decoration: underline;
+}
+a:hover {
+	color: var(--bg-color);
+	background-color: var(--less-bold);
+	text-decoration: underline;
+}
+
+b {
+	color: var(--bold);
+}
+
+#banner {
+	text-align: center;
+}
+
+#banner-logo {
+	width: 35%;
+	border: 4px solid var(--fg-color);
+	border-radius: 100%;
+}
+
+#highlights {
+	font-size: 14pt;
+}
+
+#highlight-blocks {
+	margin-top: 64px;
+	margin-bottom: 64px;
+	text-align: center;
+}
+
+.divider {
+	margin-top: 64px;
+	margin-bottom: 64px;
+	border-color: var(--fg-color);
+}
+
+.highlight-block {
+	padding: 0px 1em 1em 1em;
+	display: inline-block;
+}
+.highlight-block h2, .highlight-block p {
+	margin: 0;
+}
+.highlight-block h2 {
+	font-size: 18pt;
+}
+.highlight-block p {
+	font-size: 14pt;
+	padding-top: 8px;
+}
+
+/* Mobile exceptions. */
+@media screen and (max-width: 1000px) {
+	body {
+		max-width: 90%;
+	}
+}
