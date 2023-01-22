@@ -14,6 +14,9 @@
 
 html {
 	background-color: var(--bg-color);
+
+	/* Custom scrollbar for Firefox. */
+	scrollbar-color: var(--fg-color) var(--bg-color);
 }
 
 body {
@@ -51,11 +54,10 @@ body::after {
 	z-index: 2;
 	pointer-events: none;
 }
-/* Custom scrollbar. */
+/* Custom scrollbar for non-Firefox. */
 body::-webkit-scrollbar {
 	width: 12px;
 }
-
 body::-webkit-scrollbar-thumb {
 	background-color: var(--fg-color-secondary);
 }
