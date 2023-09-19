@@ -101,6 +101,10 @@ b {
 	text-align: center;
 }
 
+#writeups h1, #writeups p {
+	text-align: center;
+}
+
 .divider {
 	margin-top: 64px;
 	margin-bottom: 64px;
@@ -120,6 +124,25 @@ b {
 .highlight-block p {
 	font-size: 14pt;
 	padding-top: 8px;
+}
+
+.writeup-table {
+	border-collapse: collapse;
+	display: inline-block;
+	width: 120%;
+	margin-left: -10%;
+}
+.writeup-table th {
+	text-align: left;
+	border-bottom: 1px solid var(--bold);
+}
+.writeup-table td {
+	padding: 4px;
+	border: 1px solid var(--bold);
+}
+
+.writeup-table td:nth-child(2) {
+	width: 100%;
 }
 
 /* Mobile exceptions. */
