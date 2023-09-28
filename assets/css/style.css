@@ -81,6 +81,13 @@ b {
 	color: var(--bold);
 }
 
+blockquote {
+	background-color: var(--bg-color-secondary);
+	border-left: 4px solid var(--bold);
+	margin: 2% 2%;
+	padding: 2px 20px 2px 20px;
+}
+
 #banner {
 	text-align: center;
 }
