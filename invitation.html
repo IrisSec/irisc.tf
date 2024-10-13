@@ -115,6 +115,22 @@
 
 	<!-- skat sucks at JS -->
 	<script>
+		function sanitize(string) {
+			const map = {
+				'&': '&amp;',
+				'<': '&lt;',
+				'>': '&gt;',
+				'"': '&quot;',
+				"'": '&#x27;',
+				"/": '&#x2F;',
+			};
+			const reg = /[&<>"'/]/ig;
+			return string.replace(reg, (match)=>(map[match]));
+		}
+
+		const params = new URLSearchParams(window.location.search);
+		const user = sanitize(params.get('user') || 'user');
+
 		$("#matrix-000").typed({
 			strings: ["Incoming transmission..."],
 			startDelay: 2000,
@@ -132,7 +148,7 @@
 		setTimeout(function() {
 			$(".typed-cursor").remove();
 			$("#matrix-001").typed({
-				strings: ["Hello,^500 user."],
+				strings: [`Hello,^500 ${user}.`],
 				startDelay: 2000,
 				typeSpeed: 40,
 				cursorChar: "&#x2588;"
@@ -167,7 +183,7 @@
 		setTimeout(function() {
 			$(".typed-cursor").remove();
 			$("#matrix-003").typed({
-				strings: ["<pre>   ____    _     _______________  ___  ___  ___ ____</pre>"],
+				strings: ["<pre>   ____    _     _______________  ___  ___  ___  ____</pre>"],
 				typeSpeed: 1,
 				cursorChar: "&#x2588;"
 			});
@@ -176,7 +192,7 @@
 		setTimeout(function() {
 			$(".typed-cursor").remove();
 			$("#matrix-004").typed({
-				strings: ["<pre>  /  _/___(_)__ / ___/_  __/ __/ |_  |/ _ \\|_  / / /</pre>"],
+				strings: ["<pre>  /  _/___(_)__ / ___/_  __/ __/ |_  |/ _ \\|_  |/ __/</pre>"],
 				typeSpeed: 1,
 				cursorChar: "&#x2588;"
 			});
@@ -185,7 +201,7 @@
 		setTimeout(function() {
 			$(".typed-cursor").remove();
 			$("#matrix-005").typed({
-				strings: ["<pre> _/ // __/ (_-&lt;/ /__  / / / _/  / __// // / __/_  _/</pre>"],
+				strings: ["<pre> _/ // __/ (_-&lt;/ /__  / / / _/  / __// // / __//__ \\ </pre>"],
 				typeSpeed: 1,
 				cursorChar: "&#x2588;"
 			});
@@ -194,7 +210,7 @@
 		setTimeout(function() {
 			$(".typed-cursor").remove();
 			$("#matrix-006").typed({
-				strings: ["<pre>/___/_/ /_/___/\\___/ /_/ /_/   /____/\\___/____//_/  </pre>"],
+				strings: ["<pre>/___/_/ /_/___/\\___/ /_/ /_/   /____/\\___/____/____/ </pre>"],
 				typeSpeed: 1,
 				cursorChar: "&#x2588;"
 			});
@@ -204,7 +220,7 @@
 		setTimeout(function() {
 			$(".typed-cursor").remove();
 			$("#matrix-007").typed({
-				strings: ["IrisCTF 2024."],
+				strings: ["IrisCTF 2025."],
 				startDelay: 1000,
 				typeSpeed: 40,
 				cursorChar: "&#x2588;"
@@ -277,7 +293,7 @@
 		setTimeout(function() {
 			$(".typed-cursor").remove();
 			$("#matrix-011").typed({
-				strings: ["Register at <a target='_blank' href='https://2024.irisc.tf/'>2024.irisc.tf</a>."],
+				strings: ["Registration will open soon at <a target='_blank' href='https://2025.irisc.tf/'>2025.irisc.tf</a>."],
 				startDelay: 2000,
 				typeSpeed: 40,
 				cursorChar: "&#x2588;"
@@ -296,7 +312,7 @@
 		setTimeout(function() {
 			$(".typed-cursor").remove();
 			$("#matrix-012").typed({
-				strings: ["Connection terminated."],
+				strings: ["Connection terminated... and have a happy millennium."],
 				typeSpeed: 20,
 				cursorChar: "&#x2588;"
 			});
