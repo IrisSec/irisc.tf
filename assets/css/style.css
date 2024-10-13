@@ -133,6 +133,22 @@ blockquote {
 	padding-top: 8px;
 }
 
+a.no-decor {
+	all: unset;
+}
+a.no-decor:visited {
+	all: unset;
+}
+a.no-decor:hover {
+	all: unset;
+	cursor: pointer;
+}
+
+.sponsor-logo {
+	height: 72px;
+	margin: 16px;
+}
+
 .writeup-table {
 	border-collapse: collapse;
 	display: inline-block;
